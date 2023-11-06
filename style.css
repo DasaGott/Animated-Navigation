@@ -21,10 +21,9 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0px 20px;
   width: 50px;
   border-radius: 5px;
-  height: 40px;
+  height: 50px;
   box-shadow: 3px 5px 10px
     rgba(135, 135, 135, 0.6);
   transition: width 0.6s linear;
@@ -34,10 +33,8 @@ nav.active {
   width: 350px;
 }
 
-ul {
+nav ul {
   display: flex;
-  justify-content: center;
-  align-items: center;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -45,20 +42,69 @@ ul {
   transition: width 0.6s linear;
 }
 
-ul li {
-  margin: 10px;
+nav.active ul {
+  width: 100%;
+}
+
+nav ul li {
+  margin: 0 10px;
   transform: rotateY(0deg);
-  /* opacity: 0; */
-  transition: transform opacity 0.6s linear;
+  opacity: 0;
+  transition: transform 0.6s linear,
+    opacity 0.6s linear;
 }
 
-li:first-child {
-  margin-left: 0;
+nav.active ul li {
+  opacity: 1;
+  transform: rotateY(360deg);
 }
 
-ul li a {
+nav ul li a {
   text-decoration: none;
   color: #000;
   cursor: pointer;
   position: relative;
 }
+
+.icon {
+  position: relative;
+  background: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.active .icon {
+  padding: 0;
+}
+.icon .line {
+  background-color: #1f4172;
+  height: 2px;
+  width: 30px;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  transition: transform 0.6s linear;
+  opacity: 0.8;
+}
+
+.icon .line2 {
+  top: auto;
+  bottom: 10px;
+}
+
+.active .icon .line1 {
+  /* transform: rotateY(-756deg) translateY(5.5px); */
+  transform: rotate(-135deg) translateY(-14px);
+}
+
+.active .icon .line2 {
+  /* transform: rotateY(756deg) translateY(-5.5px); */
+  transform: rotate(135deg) translateY(14px);
+}
+
+/* .active .icon {
+  right: 30px;
+} */
