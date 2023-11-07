@@ -96,15 +96,9 @@ nav ul li a {
 }
 
 .active .icon .line1 {
-  /* transform: rotateY(-756deg) translateY(5.5px); */
   transform: rotate(-135deg) translateY(-14px);
 }
 
 .active .icon .line2 {
-  /* transform: rotateY(756deg) translateY(-5.5px); */
   transform: rotate(135deg) translateY(14px);
 }
-
-/* .active .icon {
-  right: 30px;
-} */
